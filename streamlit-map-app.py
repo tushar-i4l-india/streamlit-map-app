@@ -62,7 +62,7 @@ if uploaded_file is not None:
             "Manchester - OL10 2TA": (53.585153, -2.227689),
             "Birmingham - B38 8SE": (52.409933, -1.940918)
         }
-
+        grouped_df = grouped_df.dropna(subset=['latitude', 'longitude'])
         # Create a Folium map
         m = folium.Map(location=[grouped_df['latitude'].mean(), grouped_df['longitude'].mean()], zoom_start=5)
 
