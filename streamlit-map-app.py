@@ -9,7 +9,7 @@ from folium import IFrame
 st.title("Geo Map Chart for I4L Orders Based on Shipping ZipCode")
 
 # File uploader widget
-uploaded_file = st.file_uploader("Upload Excel File", type="xlsx")
+uploaded_file = st.file_uploader("Upload Order File in .xlsx format containing columns: 'Order ID', 'Total', 'Quantities', 'Product name', 'Name', 'Shipping Zip', 'Shipping Province'", type="xlsx")
 
 if uploaded_file is not None:
     # Read the Excel file
