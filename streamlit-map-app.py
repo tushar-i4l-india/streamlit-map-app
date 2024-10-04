@@ -26,7 +26,7 @@ if uploaded_file is not None:
                 location = geolocator.geocode(zip_code)
                 return location.latitude, location.longitude
             except:
-                return None, None
+                return 0, 0
 
         # Apply the function to the 'Shipping Zip' column with progress bar
         latitudes = []
