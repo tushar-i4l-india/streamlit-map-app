@@ -4,5 +4,3 @@ geopy
 folium
 streamlit_folium
 openpyxl
-geopy.geocoders
-geopy.distance
