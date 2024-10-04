@@ -18,7 +18,7 @@ if uploaded_file is not None:
     # Ensure the dataset has the required columns
     required_columns = ['Order ID', 'Total', 'Quantities', 'Product name', 'Name', 'Shipping Zip', 'Shipping Province']
     if all(column in df.columns for column in required_columns):
-        geolocator = Nominatim(user_agent="geoapiExercises")
+        geolocator = Nominatim(user_agent="streamlit-map-app")
 
         @st.cache_data
         def get_lat_lon(zip_code):
@@ -26,7 +26,7 @@ if uploaded_file is not None:
                 location = geolocator.geocode(zip_code)
                 return location.latitude, location.longitude
             except:
-                return None, None
+                return 0, 0
 
         # Apply the function to the 'Shipping Zip' column with progress bar
         latitudes = []
